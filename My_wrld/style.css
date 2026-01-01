@@ -750,6 +750,7 @@ h3{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    -webkit-backdrop-filter: blur(5px); /* Blur effect for Safari */
     backdrop-filter: blur(5px); /* Blur effect */
     animation: fadeIn 0.3s ease-in-out;
     justify-content: center;
@@ -980,6 +981,7 @@ footer{
     height: 4px;
     background: rgba(255, 255, 255, 0.2);
     z-index: 1000;
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     backdrop-filter: blur(10px);
 }
 
@@ -1025,6 +1027,7 @@ footer{
         justify-content: center;
         align-items: center;
         background: rgba(255, 255, 255, 0.9);
+        -webkit-backdrop-filter: blur(20px); /* Blur effect for Safari */
         backdrop-filter: blur(20px);
         width: 100%;
         min-height: 450px;
@@ -1231,7 +1234,7 @@ footer{
         max-width: 300px;
     }
     .edu-exp-box {
-        min-width: 200px;
+        min-width: 260px;
         padding: 1.5rem 1rem;
     }
     .filter-buttons {
@@ -1241,8 +1244,8 @@ footer{
         gap: 10px;
         padding-bottom: 8px;
         margin-bottom: 2rem;
-        scrollbar-width: thin;
-        scrollbar-color: var(--first-color) #eee;
+        scrollbar-width: thin; /* Firefox - fallback webkit ci-dessous */
+        scrollbar-color: var(--first-color) #eee; /* Firefox - fallback webkit ci-dessous */
     }
     .filter-btn {
         min-width: 120px;
@@ -1339,9 +1342,9 @@ footer{
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   padding: 2rem 1.5rem;
-  min-width: 280px;
-  max-width: 400px;
-  flex: 1 1 320px;
+  min-width: 320px;
+  max-width: 480px;
+  flex: 1 1 380px;
 }
 .edu-exp-box h3 {
   color: var(--second-color);
@@ -1433,7 +1436,7 @@ footer{
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     margin-bottom: 1.5rem;
     justify-content: flex-start;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none; /* Firefox - fallback webkit ci-dessous */
     -ms-overflow-style: none; /* IE/Edge */
 }
 .filter-buttons::-webkit-scrollbar,
